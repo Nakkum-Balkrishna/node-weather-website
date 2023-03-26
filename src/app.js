@@ -2,6 +2,9 @@
 const path = require('path')
 const express = require('express');
 const app = express();
+
+const port = process.env.PORT || 3000;
+
 const hbs = require('hbs')
 
 // console.log(__dirname);
@@ -91,6 +94,6 @@ app.get('*',(req,res)=>{
 })
 
 //starts the server and listens at a specific port
-app.listen(3000,()=>{
-    console.log("Listening on port 3000...");
+app.listen(port,()=>{
+    console.log(`Listening on port ${port}...`);
 })
