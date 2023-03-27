@@ -10,10 +10,10 @@ const forecast = (latitude, longitude, callback) => {
   // console.log(url);
   request({ url, json: true }, (error, {body}) => {
     if (error) {
-      console.log(error);
+      //console.log(error);
       callback("Something went wrong", undefined);
     } else if (body.error) {
-      console.log(body.error);
+      // console.log(body.error);
       callback("Something went wrong", undefined);
     } else {
       callback(
@@ -21,9 +21,10 @@ const forecast = (latitude, longitude, callback) => {
         body.current.weather_descriptions +
           " it is currently " +
           body.current.temperature +
-          " degress out there and there is " +
+          " degress out \n<br>. It feels like " + body.current.feelslike + " There is " +
           body.current.precip +
-          " % chance of rain"
+          " % chance of rain , "
+          + " Is it a day out there ?  " + body.current.is_day
       );
     }
   });
