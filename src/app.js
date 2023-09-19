@@ -24,21 +24,21 @@ app.use(express.static(path.join(__dirname,"../public"))); //we are using static
 
 app.get('',(req,res)=>{
     res.render("index",{
-        title:"Weather app",
+        title:"Weather App",
         name:"Balkrishna"
     });
 })
 
 app.get('/about',(req,res)=>{
     res.render('about',{
-        title:"about page",
+        title:"About Page",
         name:"Balkrishna"
     })
 })
 
 app.get('/help',(rew,res)=>{
     res.render('help',{
-        title:"Tis is help page",
+        title:"This is help page",
         name:"Balkrishna"
     })
 })
